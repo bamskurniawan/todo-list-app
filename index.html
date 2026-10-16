@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#172554">
+  <title>My Daily Tasks | To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app-container">
+    <header class="profile-header">
+      <div class="brand">
+        <div class="brand-icon">✓</div>
+        <div>
+          <h1>My Daily Tasks</h1>
+          <p>Employee Productivity Dashboard</p>
+        </div>
+      </div>
+
+      <div class="profile">
+        <div class="avatar" id="avatar">K</div>
+        <div>
+          <strong id="profileName">Nama Karyawan</strong>
+          <p id="profileRole">Staff</p>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="welcome-section">
+        <div>
+          <p class="eyebrow">PERSONAL WORKSPACE</p>
+          <h2 id="greeting">Selamat datang!</h2>
+          <p class="muted">Rencanakan pekerjaanmu, selesaikan satu per satu.</p>
+        </div>
+
+        <div class="date-card">
+          <span>📅 Hari ini</span>
+          <strong id="currentDate">Memuat tanggal...</strong>
+          <small id="currentTime">Memuat waktu...</small>
+        </div>
+      </section>
+
+      <section class="stats-grid">
+        <article class="stat-card">
+          <span class="stat-icon blue">📋</span>
+          <p>Total Tugas</p>
+          <strong id="totalCount">0</strong>
+        </article>
+
+        <article class="stat-card">
+          <span class="stat-icon orange">⏳</span>
+          <p>To Do</p>
+          <strong id="todoCount">0</strong>
+        </article>
+
+        <article class="stat-card">
+          <span class="stat-icon green">✓</span>
+          <p>Done</p>
+          <strong id="doneCount">0</strong>
+        </article>
+
+        <article class="stat-card">
+          <span class="stat-icon red">⚠</span>
+          <p>Overdue</p>
+          <strong id="overdueCount">0</strong>
+        </article>
+      </section>
+
+      <section class="panel form-panel">
+        <div class="section-heading">
+          <div>
+            <h2>Tambah Tugas Baru</h2>
+            <p class="muted">Tuliskan pekerjaan yang ingin kamu selesaikan.</p>
+          </div>
+        </div>
+
+        <form id="taskForm">
+          <div class="form-group">
+            <label for="taskInput">Deskripsi Pekerjaan *</label>
+            <textarea
+              id="taskInput"
+              placeholder="Contoh: Menyelesaikan laporan mingguan..."
+              rows="3"
+              maxlength="500"
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="priorityInput">Level Prioritas</label>
+              <select id="priorityInput">
+                <option value="Low">Low - Rendah</option>
+                <option value="Medium" selected>Medium - Sedang</option>
+                <option value="High">High - Tinggi</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="dueDateInput">Tanggal Jatuh Tempo</label>
+              <input type="date" id="dueDateInput">
+              <small class="field-hint">Opsional, untuk memantau tugas terlambat.</small>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary">
+            + Tambah Tugas
+          </button>
+        </form>
+      </section>
+
+      <section class="task-section">
+        <div class="section-heading task-heading">
+          <div>
+            <h2>Daftar Pekerjaan</h2>
+            <p class="muted">Pantau pekerjaan aktif dan yang telah selesai.</p>
+          </div>
+          <button type="button" id="deleteAllBtn" class="btn btn-danger-outline">
+            🗑 Hapus Semua
+          </button>
+        </div>
+
+        <div class="panel">
+          <div class="list-heading">
+            <h3>⏳ TO DO <span id="todoBadge" class="count-badge">0</span></h3>
+            <span class="muted small-text">Tugas aktif</span>
+          </div>
+
+          <div id="todoList" class="task-list"></div>
+        </div>
+
+        <div class="panel done-panel">
+          <div class="list-heading">
+            <h3>✓ DONE <span id="doneBadge" class="count-badge green-badge">0</span></h3>
+            <span class="muted small-text">Tugas selesai</span>
+          </div>
+
+          <div id="doneList" class="task-list"></div>
+        </div>
+      </section>
+
+      <footer>
+        <p>Tugas Mission 4 &copy; <span id="currentYear"></span></p>
+        <p>Bams Kurniawan</p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
